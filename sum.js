@@ -1,11 +1,14 @@
 function sum (num) {
-    let parameter = Math.floor(num)
+    let parameter = Math.abs(Math.floor(num));
     let result = 0;
     if (num == 0) {
         result = 0;
         return result;
-    }else{
+    }else if (num > 0){
         result = (1 + parameter)*parameter/2;
+        return result;
+    }else if (num<0){
+        result = -(1 + parameter)*parameter/2;
         return result;
     }
     
@@ -18,5 +21,4 @@ console.log(3) // 6;
 console.log(sum(0));
 console.log(sum(1));
 console.log(sum(10));
-console.log(sum(3.5));
-console.log(sum(3.8));
+console.log(sum(-3));
