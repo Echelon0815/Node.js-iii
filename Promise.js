@@ -8,7 +8,7 @@
 let doWork = function (job, timer) {
     // 1. 物件 -> new
     return new Promise((resolve,reject) => {
-    //成功的話回傳`完成工作 ${job} at ${now.toISOString()}`
+    //setTimeout()成功的話resolve()的參數設為`完成工作 ${job} at ${now.toISOString()}`
     setTimeout(() => {
       let now = new Date();
       resolve(`完成工作 ${job} at ${now.toISOString()}`);
@@ -25,6 +25,7 @@ let doWork = function (job, timer) {
 //then() 裡面的參數可以有兩個，或只寫一個 分別代表成功時執行的cb和失敗執行的cb
 //catch() 裏頭則只能放失敗時執行的cb
 //這裡定義成功時的cb funtion(data) => {console.log(data); return doWork()}
+//data 被 dowork定義成 `完成工作...`
 let brushPromise = doWork('刷牙', 3000);
 brushPromise
   .then((data) => {
