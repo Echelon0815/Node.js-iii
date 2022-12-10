@@ -32,3 +32,18 @@ console.time(sum(10));
 console.timeEnd(sum(10));
 console.time(sum(10000));
 console.timeEnd(sum(10000));
+
+// recursive f(n)=f(n-1)
+
+function sum (n) {
+    if(n ==1){
+        return 1;
+    }else{
+        return sum(n-1)+n;
+    }
+}
+console.log(sum233(100));
+
+// 上底下底
+// 迴圈
+// reduce
