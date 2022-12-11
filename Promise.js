@@ -16,6 +16,22 @@ let doWork = function (job, timer) {
     });
 };
 
+let brushPromise = doWork('刷牙', 3000);
+brushPromise
+  .then((data) => {
+    console.log(data); return doWork('早餐', 3000)
+  })
+  .then((data) => {
+    console.log(data); return doWork('上班', 3000)
+  })
+  .then((data) => {
+    console.log(data);
+  })
+  .catch((err) => {
+    console.error('發生錯誤', err);
+  });
+
+
 //開始前先宣布現在時間
   let now = new Date();
   console.log(`工作開始 at ${now.toISOString()}`);
