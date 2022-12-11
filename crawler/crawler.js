@@ -18,8 +18,8 @@ async function getData() {
         const get = await axios.get('http://54.71.133.152:3000/stocks?stockNo=2618&date=202211');
         const data = get;
         console.log(data);
-    }   catch (error) {
-        throw new Error(error);
+    }   catch (e) {
+        console.error(e);
     }
 }
 
