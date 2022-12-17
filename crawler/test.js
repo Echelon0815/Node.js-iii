@@ -4,13 +4,13 @@ const mysql2 = require('mysql2/promise');
     const connection = await mysql2.createConnection({
         host:'127.0.0.1',
         port: 3306,
-        user: 'root',
+        user: '',
         password:'',
         database: 'stock_mfee31',
     })
 
 
-// let result = await connection.query('SELECT * FROM `stocks`');
+// let result = await connection.query('SELECT * FROM `stogcks`');
 // let data = result;
 
 let [data, fields] = await connection.query('SELECT * FROM `stocks`');
