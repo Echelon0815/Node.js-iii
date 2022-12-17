@@ -10,12 +10,16 @@ const mysql2 = require('mysql2/promise');
     })
 
 
-let result = await connection.query('SELECT * FROM `stocks`');
-let data = result;
+// let result = await connection.query('SELECT * FROM `stocks`');
+// let data = result;
+
+let [data, fields] = await connection.query('SELECT * FROM `stocks`');
 
 console.log(data);
 
 connection.end();
 })();
 
+let family = ['Peter','Mary'];
+let [father,mother] = family; 
 
